@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Thermometer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Basic&family=Kaushan+Script&family=Permanent+Marker&display=swap');
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100%;
+            background-color: rgb(35, 133, 224);
+            font-family: 'Basic', sans-serif;
+        }
+        .container{
+            height: 100%;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            display: grid;
+            place-items: center;
+        }
+        .container .innerDiv{
+            text-align: center;
+            color: rgb(248, 223, 223);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="innerDiv">
+            <h1 class="heading">I am Thermometer <br> <span id="thermo" class="fa"></span></h1>
+        </div>
+    </div>
+
+
+    <script>
+        const tempLoad = () => {
+            let thermo = document.getElementById('thermo');
+            thermo.innerHTML = "&#xf2cb";
+            thermo.style.color = "blue";
+            setTimeout(() => {
+                thermo.innerHTML = "&#xf2ca";
+            }, 1000);
+            setTimeout(() => {
+                thermo.innerHTML = "&#xf2c9";
+            }, 2000);
+            setTimeout(() => {
+                thermo.innerHTML = "&#xf2c8";
+            }, 3000);
+            setTimeout(() => {
+                thermo.innerHTML = "&#xf2c7";
+                thermo.style.color = "#fff";
+            }, 4000);
+        }
+
+        tempLoad();
+        setInterval(tempLoad, 5000);
+    </script>
+
+</body>
+</html>
